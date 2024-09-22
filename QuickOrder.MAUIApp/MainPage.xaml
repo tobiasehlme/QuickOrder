@@ -1,0 +1,370 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="QuickOrder.MAUIApp.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:beställaTekniker="clr-namespace:QuickOrder.MAUIApp"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    BackgroundColor="#F5F5F5">
+
+    <ScrollView>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="50" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="50" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="1" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="10" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <!--  Vänster sida  -->
+                    <Border
+                        Padding="10"
+                        BackgroundColor="#F28600"
+                        HorizontalOptions="FillAndExpand"
+                        Stroke="Transparent"
+                        StrokeShape="RoundRectangle 40,40,0,0"
+                        VerticalOptions="FillAndExpand">
+                        <Border.Shadow>
+                            <Shadow
+                                Brush="Gray"
+                                Opacity="0.5"
+                                Radius="10"
+                                Offset="5,5" />
+                        </Border.Shadow>
+                        <StackLayout>
+                            <Label Margin="20,0,5,5" FontSize="15">💼 Välj kund! 💼</Label>
+                            <Picker
+                                x:Name="kundPicker"
+                                Background="#E07000"
+                                FontSize="15" />
+                        </StackLayout>
+                    </Border>
+                    <StackLayout Grid.Row="2">
+                        <Entry
+                            x:Name="storeNameBox"
+                            Margin="0,0,0,8"
+                            BackgroundColor="#F28600"
+                            Placeholder="Butiksnamn"
+                            PlaceholderColor="#F5F5F5">
+                            <Entry.Behaviors>
+                                <toolkit:AnimationBehavior EventName="Focused">
+                                    <toolkit:AnimationBehavior.AnimationType>
+                                        <beställaTekniker:SampleScaleToAnimation
+                                            Easing="{x:Static Easing.Linear}"
+                                            Length="100"
+                                            Scale="1.05" />
+                                    </toolkit:AnimationBehavior.AnimationType>
+                                </toolkit:AnimationBehavior>
+
+                                <toolkit:AnimationBehavior EventName="Unfocused">
+                                    <toolkit:AnimationBehavior.AnimationType>
+                                        <beställaTekniker:SampleScaleToAnimation
+                                            Easing="{x:Static Easing.Linear}"
+                                            Length="100"
+                                            Scale="1" />
+                                    </toolkit:AnimationBehavior.AnimationType>
+                                </toolkit:AnimationBehavior>
+                            </Entry.Behaviors>
+                            <Entry.Shadow>
+                                <Shadow
+                                    Brush="Gray"
+                                    Opacity="0.5"
+                                    Radius="10"
+                                    Offset="5,5" />
+                            </Entry.Shadow>
+                        </Entry>
+                        <Entry
+                            x:Name="storeNumberBox"
+                            Margin="0,0,0,8"
+                            BackgroundColor="#F28600"
+                            Placeholder="Butiksnummer ex. 10510"
+                            PlaceholderColor="#F5F5F5">
+                            <Entry.Behaviors>
+                                <toolkit:AnimationBehavior EventName="Focused">
+                                    <toolkit:AnimationBehavior.AnimationType>
+                                        <beställaTekniker:SampleScaleToAnimation
+                                            Easing="{x:Static Easing.Linear}"
+                                            Length="100"
+                                            Scale="1.05" />
+                                    </toolkit:AnimationBehavior.AnimationType>
+                                </toolkit:AnimationBehavior>
+
+                                <toolkit:AnimationBehavior EventName="Unfocused">
+                                    <toolkit:AnimationBehavior.AnimationType>
+                                        <beställaTekniker:SampleScaleToAnimation
+                                            Easing="{x:Static Easing.Linear}"
+                                            Length="100"
+                                            Scale="1" />
+                                    </toolkit:AnimationBehavior.AnimationType>
+                                </toolkit:AnimationBehavior>
+                            </Entry.Behaviors>
+                            <Entry.Shadow>
+                                <Shadow
+                                    Brush="Gray"
+                                    Opacity="0.5"
+                                    Radius="10"
+                                    Offset="5,5" />
+                            </Entry.Shadow>
+                        </Entry>
+                        <Entry
+                            x:Name="storeAdressBox"
+                            Margin="0,0,0,8"
+                            BackgroundColor="#F28600"
+                            Placeholder="Adress"
+                            PlaceholderColor="#F5F5F5">
+                            <Entry.Behaviors>
+                                <toolkit:AnimationBehavior EventName="Focused">
+                                    <toolkit:AnimationBehavior.AnimationType>
+                                        <beställaTekniker:SampleScaleToAnimation
+                                            Easing="{x:Static Easing.Linear}"
+                                            Length="100"
+                                            Scale="1.05" />
+                                    </toolkit:AnimationBehavior.AnimationType>
+                                </toolkit:AnimationBehavior>
+
+                                <toolkit:AnimationBehavior EventName="Unfocused">
+                                    <toolkit:AnimationBehavior.AnimationType>
+                                        <beställaTekniker:SampleScaleToAnimation
+                                            Easing="{x:Static Easing.Linear}"
+                                            Length="100"
+                                            Scale="1" />
+                                    </toolkit:AnimationBehavior.AnimationType>
+                                </toolkit:AnimationBehavior>
+                            </Entry.Behaviors>
+                            <Entry.Shadow>
+                                <Shadow
+                                    Brush="Gray"
+                                    Opacity="0.5"
+                                    Radius="10"
+                                    Offset="5,5" />
+                            </Entry.Shadow>
+                        </Entry>
+                        <Entry
+                            x:Name="storePostBox"
+                            Margin="0,0,0,8"
+                            BackgroundColor="#F28600"
+                            Placeholder="Postnummer och Ort"
+                            PlaceholderColor="#F5F5F5">
+                            <Entry.Behaviors>
+                                <toolkit:AnimationBehavior EventName="Focused">
+                                    <toolkit:AnimationBehavior.AnimationType>
+                                        <beställaTekniker:SampleScaleToAnimation
+                                            Easing="{x:Static Easing.Linear}"
+                                            Length="100"
+                                            Scale="1.05" />
+                                    </toolkit:AnimationBehavior.AnimationType>
+                                </toolkit:AnimationBehavior>
+
+                                <toolkit:AnimationBehavior EventName="Unfocused">
+                                    <toolkit:AnimationBehavior.AnimationType>
+                                        <beställaTekniker:SampleScaleToAnimation
+                                            Easing="{x:Static Easing.Linear}"
+                                            Length="100"
+                                            Scale="1" />
+                                    </toolkit:AnimationBehavior.AnimationType>
+                                </toolkit:AnimationBehavior>
+                            </Entry.Behaviors>
+                            <Entry.Shadow>
+                                <Shadow
+                                    Brush="Gray"
+                                    Opacity="0.5"
+                                    Radius="10"
+                                    Offset="5,5" />
+                            </Entry.Shadow>
+                        </Entry>
+                        <Entry
+                            x:Name="storeCountryBox"
+                            Margin="0,0,0,8"
+                            BackgroundColor="#F28600"
+                            Placeholder="Land änna"
+                            PlaceholderColor="#F5F5F5">
+                            <Entry.Behaviors>
+                                <toolkit:AnimationBehavior EventName="Focused">
+                                    <toolkit:AnimationBehavior.AnimationType>
+                                        <beställaTekniker:SampleScaleToAnimation
+                                            Easing="{x:Static Easing.Linear}"
+                                            Length="100"
+                                            Scale="1.05" />
+                                    </toolkit:AnimationBehavior.AnimationType>
+                                </toolkit:AnimationBehavior>
+
+                                <toolkit:AnimationBehavior EventName="Unfocused">
+                                    <toolkit:AnimationBehavior.AnimationType>
+                                        <beställaTekniker:SampleScaleToAnimation
+                                            Easing="{x:Static Easing.Linear}"
+                                            Length="100"
+                                            Scale="1" />
+                                    </toolkit:AnimationBehavior.AnimationType>
+                                </toolkit:AnimationBehavior>
+                            </Entry.Behaviors>
+                            <Entry.Shadow>
+                                <Shadow
+                                    Brush="Gray"
+                                    Opacity="0.5"
+                                    Radius="10"
+                                    Offset="5,5" />
+                            </Entry.Shadow>
+                        </Entry>
+                        <Border
+                            Padding="10"
+                            BackgroundColor="#F28600"
+                            HorizontalOptions="FillAndExpand"
+                            Stroke="Transparent"
+                            StrokeShape="RoundRectangle 0,0,40,40"
+                            VerticalOptions="FillAndExpand">
+                            <Border.Shadow>
+                                <Shadow
+                                    Brush="Gray"
+                                    Opacity="0.5"
+                                    Radius="10"
+                                    Offset="5,5" />
+                            </Border.Shadow>
+                            <HorizontalStackLayout>
+                                <Label Text="Copy paste?" />
+                                <CheckBox x:Name="copyCheckBox" Margin="0,-10,0,0" />
+                            </HorizontalStackLayout>
+                        </Border>
+                    </StackLayout>
+
+                    <!--  Höger sida  -->
+                    <Border
+                        Grid.Column="2"
+                        Padding="20"
+                        BackgroundColor="#F28600"
+                        HorizontalOptions="FillAndExpand"
+                        Stroke="Transparent"
+                        StrokeShape="RoundRectangle 40,40,40,40"
+                        VerticalOptions="FillAndExpand">
+                        <Border.Shadow>
+                            <Shadow
+                                Brush="Gray"
+                                Opacity="0.5"
+                                Radius="10"
+                                Offset="5,5" />
+                        </Border.Shadow>
+                        <StackLayout>
+                            <Label Margin="15,-10,5,5" FontSize="15">🚀 Välj uppdrag 🚀</Label>
+                            <Picker
+                                x:Name="uppdragsPicker"
+                                Background="#E07000"
+                                FontSize="15" />
+                        </StackLayout>
+                    </Border>
+                    <!--<Border
+                        Grid.Row="2"
+                        Grid.Column="2"
+                        Padding="20"
+                        BackgroundColor="#F28600"
+                        HorizontalOptions="FillAndExpand"
+                        MaximumHeightRequest="180"
+                        MaximumWidthRequest="180"
+                        Stroke="Transparent"
+                        StrokeShape="RoundRectangle 40,40,40,40"
+                        VerticalOptions="FillAndExpand">
+                        <Border.Shadow>
+                            <Shadow
+                                Brush="Gray"
+                                Opacity="0.5"
+                                Radius="10"
+                                Offset="5,5" />
+                        </Border.Shadow>
+                        <toolkit:Expander>
+                            <toolkit:Expander.Header>
+                                <Label Text="Ändra kunder!" />
+                            </toolkit:Expander.Header>
+                            <HorizontalStackLayout Padding="10">
+                                <Label Text="Lägg till kund" />
+                                <Label Text="Ta bort kund" />
+
+                            </HorizontalStackLayout>
+                        </toolkit:Expander>
+
+                    </Border>-->
+
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <!--  Knapp  -->
+                    <Button
+                        x:Name="CreatePdfButton"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Margin="15,0,0,-10"
+                        BackgroundColor="#F28600"
+                        Clicked="CreatePdfButton_OnClicked"
+                        Text="📄Skapa PDF📄"
+                        TextColor="#F5F5F5">
+                        <Button.Behaviors>
+                            <toolkit:AnimationBehavior EventName="Clicked">
+                                <toolkit:AnimationBehavior.AnimationType>
+                                    <beställaTekniker:ButtonAnimation Easing="{x:Static Easing.Linear}" Length="100" />
+                                </toolkit:AnimationBehavior.AnimationType>
+                            </toolkit:AnimationBehavior>
+                        </Button.Behaviors>
+                        <Button.Shadow>
+                            <Shadow
+                                Brush="Gray"
+                                Opacity="0.5"
+                                Radius="10"
+                                Offset="5,5" />
+                        </Button.Shadow>
+                    </Button>
+                </Grid>
+            </Grid>
+        </Grid>
+
+        <!--<VerticalStackLayout Padding="30,0" Spacing="25">
+            <Image
+                Aspect="AspectFit"
+                HeightRequest="185"
+                SemanticProperties.Description="dot net bot in a race car number eight"
+                Source="dotnet_bot.png" />
+
+            <Label
+                SemanticProperties.HeadingLevel="Level1"
+                Style="{StaticResource Headline}"
+                Text="Hello, World!" />
+
+            <Label
+                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+                SemanticProperties.HeadingLevel="Level2"
+                Style="{StaticResource SubHeadline}"
+                Text="Welcome to &#10;.NET Multi-platform App UI" />
+
+            <Button
+                x:Name="CounterBtn"
+                Clicked="OnCounterClicked"
+                HorizontalOptions="Fill"
+                SemanticProperties.Hint="Counts the number of times you click"
+                Text="Click me" />
+        </VerticalStackLayout>-->
+    </ScrollView>
+
+</ContentPage>

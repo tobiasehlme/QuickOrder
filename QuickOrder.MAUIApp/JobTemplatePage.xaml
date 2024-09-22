@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="QuickOrder.MAUIApp.JobTemplatePage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:beställaTekniker="using:QuickOrder.MAUIApp"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    Title="JobTemplatePage"
+    BackgroundColor="#F5F5F5">
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+        <Border
+            Padding="20"
+            BackgroundColor="#F28600"
+            HorizontalOptions="FillAndExpand"
+            Stroke="Transparent"
+            StrokeShape="RoundRectangle 40,40,40,40"
+            VerticalOptions="FillAndExpand">
+            <Border.Shadow>
+                <Shadow
+                    Brush="Gray"
+                    Opacity="0.5"
+                    Radius="10"
+                    Offset="5,5" />
+            </Border.Shadow>
+            <StackLayout>
+                <Label Margin="0,0,0,10" Text="Skriv mer info om beställningen" />
+                <Entry
+                    x:Name="telefonNr"
+                    Margin="0,0,0,10"
+                    BackgroundColor="#E07000"
+                    Placeholder="Butiksnummer ex. 031-7221542"
+                    PlaceholderColor="#F5F5F5">
+                    <Entry.Behaviors>
+                        <toolkit:AnimationBehavior EventName="Focused">
+                            <toolkit:AnimationBehavior.AnimationType>
+                                <beställaTekniker:SampleScaleToAnimation
+                                    Easing="{x:Static Easing.Linear}"
+                                    Length="100"
+                                    Scale="1.05" />
+                            </toolkit:AnimationBehavior.AnimationType>
+                        </toolkit:AnimationBehavior>
+
+                        <toolkit:AnimationBehavior EventName="Unfocused">
+                            <toolkit:AnimationBehavior.AnimationType>
+                                <beställaTekniker:SampleScaleToAnimation
+                                    Easing="{x:Static Easing.Linear}"
+                                    Length="100"
+                                    Scale="1" />
+                            </toolkit:AnimationBehavior.AnimationType>
+                        </toolkit:AnimationBehavior>
+                    </Entry.Behaviors>
+                    <Entry.Shadow>
+                        <Shadow
+                            Brush="Gray"
+                            Opacity="0.5"
+                            Radius="10"
+                            Offset="5,5" />
+                    </Entry.Shadow>
+                </Entry>
+                <Entry
+                    x:Name="ticket"
+                    Margin="0,0,0,10"
+                    BackgroundColor="#E07000"
+                    Placeholder="Ärendesnummer"
+                    PlaceholderColor="#F5F5F5">
+                    <Entry.Behaviors>
+                        <toolkit:AnimationBehavior EventName="Focused">
+                            <toolkit:AnimationBehavior.AnimationType>
+                                <beställaTekniker:SampleScaleToAnimation
+                                    Easing="{x:Static Easing.Linear}"
+                                    Length="100"
+                                    Scale="1.05" />
+                            </toolkit:AnimationBehavior.AnimationType>
+                        </toolkit:AnimationBehavior>
+
+                        <toolkit:AnimationBehavior EventName="Unfocused">
+                            <toolkit:AnimationBehavior.AnimationType>
+                                <beställaTekniker:SampleScaleToAnimation
+                                    Easing="{x:Static Easing.Linear}"
+                                    Length="100"
+                                    Scale="1" />
+                            </toolkit:AnimationBehavior.AnimationType>
+                        </toolkit:AnimationBehavior>
+                    </Entry.Behaviors>
+                    <Entry.Shadow>
+                        <Shadow
+                            Brush="Gray"
+                            Opacity="0.5"
+                            Radius="10"
+                            Offset="5,5" />
+                    </Entry.Shadow>
+                </Entry>
+                <Entry
+                    x:Name="quantity"
+                    Margin="0,0,0,10"
+                    BackgroundColor="#E07000"
+                    Placeholder="Antal"
+                    PlaceholderColor="#F5F5F5">
+                    <Entry.Behaviors>
+                        <toolkit:AnimationBehavior EventName="Focused">
+                            <toolkit:AnimationBehavior.AnimationType>
+                                <beställaTekniker:SampleScaleToAnimation
+                                    Easing="{x:Static Easing.Linear}"
+                                    Length="100"
+                                    Scale="1.05" />
+                            </toolkit:AnimationBehavior.AnimationType>
+                        </toolkit:AnimationBehavior>
+
+                        <toolkit:AnimationBehavior EventName="Unfocused">
+                            <toolkit:AnimationBehavior.AnimationType>
+                                <beställaTekniker:SampleScaleToAnimation
+                                    Easing="{x:Static Easing.Linear}"
+                                    Length="100"
+                                    Scale="1" />
+                            </toolkit:AnimationBehavior.AnimationType>
+                        </toolkit:AnimationBehavior>
+                    </Entry.Behaviors>
+                    <Entry.Shadow>
+                        <Shadow
+                            Brush="Gray"
+                            Opacity="0.5"
+                            Radius="10"
+                            Offset="5,5" />
+                    </Entry.Shadow>
+                </Entry>
+                <Entry
+                    x:Name="info1"
+                    Margin="0,0,0,10"
+                    BackgroundColor="#E07000"
+                    Placeholder="Beställningsspecifik 1"
+                    PlaceholderColor="#F5F5F5">
+                    <Entry.Behaviors>
+                        <toolkit:AnimationBehavior EventName="Focused">
+                            <toolkit:AnimationBehavior.AnimationType>
+                                <beställaTekniker:SampleScaleToAnimation
+                                    Easing="{x:Static Easing.Linear}"
+                                    Length="100"
+                                    Scale="1.05" />
+                            </toolkit:AnimationBehavior.AnimationType>
+                        </toolkit:AnimationBehavior>
+
+                        <toolkit:AnimationBehavior EventName="Unfocused">
+                            <toolkit:AnimationBehavior.AnimationType>
+                                <beställaTekniker:SampleScaleToAnimation
+                                    Easing="{x:Static Easing.Linear}"
+                                    Length="100"
+                                    Scale="1" />
+                            </toolkit:AnimationBehavior.AnimationType>
+                        </toolkit:AnimationBehavior>
+                    </Entry.Behaviors>
+                    <Entry.Shadow>
+                        <Shadow
+                            Brush="Gray"
+                            Opacity="0.5"
+                            Radius="10"
+                            Offset="5,5" />
+                    </Entry.Shadow>
+                </Entry>
+                <Entry
+                    x:Name="info2"
+                    Margin="0,0,0,10"
+                    BackgroundColor="#E07000"
+                    Placeholder="Beställningsspecifik 2"
+                    PlaceholderColor="#F5F5F5">
+                    <Entry.Behaviors>
+                        <toolkit:AnimationBehavior EventName="Focused">
+                            <toolkit:AnimationBehavior.AnimationType>
+                                <beställaTekniker:SampleScaleToAnimation
+                                    Easing="{x:Static Easing.Linear}"
+                                    Length="100"
+                                    Scale="1.05" />
+                            </toolkit:AnimationBehavior.AnimationType>
+                        </toolkit:AnimationBehavior>
+
+                        <toolkit:AnimationBehavior EventName="Unfocused">
+                            <toolkit:AnimationBehavior.AnimationType>
+                                <beställaTekniker:SampleScaleToAnimation
+                                    Easing="{x:Static Easing.Linear}"
+                                    Length="100"
+                                    Scale="1" />
+                            </toolkit:AnimationBehavior.AnimationType>
+                        </toolkit:AnimationBehavior>
+                    </Entry.Behaviors>
+                    <Entry.Shadow>
+                        <Shadow
+                            Brush="Gray"
+                            Opacity="0.5"
+                            Radius="10"
+                            Offset="5,5" />
+                    </Entry.Shadow>
+                </Entry>
+
+
+            </StackLayout>
+
+        </Border>
+        <Button
+            Margin="0,20"
+            BackgroundColor="#F28600"
+            Clicked="Button_Clicked"
+            Text="Skicka beställning"
+            TextColor="#F5F5F5">
+            <Button.Behaviors>
+                <toolkit:AnimationBehavior EventName="Clicked">
+                    <toolkit:AnimationBehavior.AnimationType>
+                        <beställaTekniker:ButtonAnimation Easing="{x:Static Easing.Linear}" Length="100" />
+                    </toolkit:AnimationBehavior.AnimationType>
+                </toolkit:AnimationBehavior>
+            </Button.Behaviors>
+            <Button.Shadow>
+                <Shadow
+                    Brush="Gray"
+                    Opacity="0.5"
+                    Radius="10"
+                    Offset="5,5" />
+            </Button.Shadow>
+        </Button>
+    </StackLayout>
+</ContentPage>
