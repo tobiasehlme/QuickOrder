@@ -49,20 +49,20 @@ namespace QuickOrder.MAUIApp
             {
                 var toast = Toast.Make("Hittar inte pdf filerna i bobbo mappen!", CommunityToolkit.Maui.Core.ToastDuration.Short, 12);
                 await toast.Show();
-                base.Quit();
+                Application.Current.Quit();
             }
             if (!File.Exists(company))
             {
                 var toast = Toast.Make("Hittar inte company.json filen i bobbo mappen!", CommunityToolkit.Maui.Core.ToastDuration.Short, 12);
                 await toast.Show();
-                base.Quit();
+                Application.Current.Quit();
             }
             string? json = await File.ReadAllTextAsync(company);
             if (string.IsNullOrEmpty(json))
             {
                 var toast = Toast.Make("company.json filen är tom!", CommunityToolkit.Maui.Core.ToastDuration.Short, 12); // Fyll i company.json filen med rätt information!
                 await toast.Show();
-                base.Quit();
+                Application.Current.Quit();
             }
         }
     }

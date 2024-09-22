@@ -137,7 +137,7 @@ namespace QuickOrder.MAUIApp
             {
                 postcode = " ";
             }
-            var store = new Store() { Postcode = int.Parse(postcode), Province = province, Adress = storeAdressBox.Text, Country = storeCountryBox.Text, Name = storeNameBox.Text, Id = storeNumberBox.Text, Customer = new Customer() { Id = int.Parse(kundId), Name = kundNamn } };
+            var store = new Store() { Postcode = postcode, Province = province, Adress = storeAdressBox.Text, Country = storeCountryBox.Text, Name = storeNameBox.Text, Id = storeNumberBox.Text, Customer = new Customer() { Id = int.Parse(kundId), Name = kundNamn } };
             return store;
         }
 
