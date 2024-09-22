@@ -1,7 +1,7 @@
 # QuickOrder
 "Streamline your service requests with QuickOrder, the app that simplifies creating and sending orders to technicians."
 
-<picture><img src="QuickOrder/blob/main/project.png" width="500"></picture>
+<picture><img src="QuickOrder/project.png" width="500"></picture>
 
 The goal of this project is to optimize the workflow of tasks when creating orders in my business enviroment.  
 The user can easily make an order to, then email it to the subcontractors.  
