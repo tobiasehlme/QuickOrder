@@ -18,4 +18,4 @@ Our business studio is running very slowly, and orders must be manually deleted 
 1. **Refactoring :)**  
 2. Integrate the app with our business studio database to retrieve customer and store information.
 (Currently, the app uses .json for customer data)
-
+3. Effortlessly add new customers directly through the app.
