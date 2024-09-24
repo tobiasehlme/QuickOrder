@@ -3,19 +3,19 @@
 
 <picture><img src="project.png" width="500"></picture>
 
-The goal of this project is to optimize the workflow of tasks when creating orders in my business enviroment.  
-The user can easily make an order to, then email it to the subcontractors.  
-The user should easily scroll through customers, and select what job that needs to be done.  
-After the user has filled in important information, the application then generates a pdf file.  
-Users can easily add new customers via txt file (.json).   
-The application manipulates pdf files with the help of iText
+The purpose of this project is to enhance the efficiency of order creation in our business environment.
+QuickOrder allows users to quickly create an order and send it via email to subcontractors.
+Users can seamlessly browse through customers and select the required tasks. 
+Once the necessary information is filled in, the app generates a PDF.
+Adding new customers is also easy, with support for importing from .json files.
+PDF manipulation is handled via iText, providing smooth document generation.
 
 
 ## Why?
-Because our business studio is extremly slow.  
-And the orders needs to be deleted in our studio afterwards.  
+Our business studio is running very slowly, and orders must be manually deleted from the system afterward.
 
 ## Goals?
 1. **Refactoring :)**  
-2. The application connects with our business studio DB to find the customer/store info.  
-(As of now the application is using an txt for customers)
+2. Integrate the app with our business studio database to retrieve customer and store information.
+(Currently, the app uses .json for customer data)
+
