@@ -3,12 +3,12 @@
 
 <picture><img src="project.png" width="500"></picture>
 
-The purpose of this project is to enhance the efficiency of order creation in our business environment.
-QuickOrder allows users to quickly create an order and send it via email to subcontractors.
-Users can seamlessly browse through customers and select the required tasks. 
-Once the necessary information is filled in, the app generates a PDF.
-Adding new customers is also easy, with support for importing from .json files.
-PDF manipulation is handled via iText, providing smooth document generation.
+The purpose of this project is to enhance the efficiency of order creation in our business environment.  
+QuickOrder allows users to quickly create an order and send it via email to subcontractors.  
+Users can seamlessly browse through customers and select the required tasks.  
+Once the necessary information is filled in, the app generates a PDF.  
+Adding new customers is also easy, with support for importing from .json files.  
+PDF manipulation is handled via iText, providing smooth document generation.  
 
 
 ## Why?
