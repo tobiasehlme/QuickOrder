@@ -8,6 +8,7 @@ namespace QuickOrder.MAUIApp
 {
     public partial class App : Application
     {
+        private bool _isCompanyExist;
         public App()
         {
             InitializeComponent();
@@ -27,9 +28,11 @@ namespace QuickOrder.MAUIApp
 
         protected override async void OnStart()
         {
-            
 
-            await Task.WhenAll(CheckRequiredFiles(), CustomerManager.LoadCustomersFromFile());
+
+            await CustomerManager.LoadCustomersFromFile();
+            _isCompanyExist = await CustomerManager.LoadCompanyFromFile();
+            await CheckRequiredFiles();
             base.OnStart();
         }
 
@@ -38,7 +41,6 @@ namespace QuickOrder.MAUIApp
             string appDir = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "bobbo");
             string mainSrc = System.IO.Path.Combine(appDir, "templatePdf.pdf");
             string dest = System.IO.Path.Combine(appDir, "editedPdf.pdf");
-            string company = System.IO.Path.Combine(appDir, "company.json");
 
 
             if (!Directory.Exists(appDir))
@@ -47,24 +49,21 @@ namespace QuickOrder.MAUIApp
             }
             if (!File.Exists(mainSrc) || !File.Exists(dest))
             {
-                var toast = Toast.Make("Hittar inte pdf filerna i bobbo mappen!", CommunityToolkit.Maui.Core.ToastDuration.Short, 12);
+                var toast = Toast.Make("Hittar inte pdf filerna i bobbo mappen! Skapar nya...", CommunityToolkit.Maui.Core.ToastDuration.Long, 18);
                 await toast.Show();
+                await File.WriteAllTextAsync(mainSrc, "");
+                await File.WriteAllTextAsync(dest, "");
                 Application.Current.Quit();
             }
-            if (!File.Exists(company))
+
+            if (!_isCompanyExist)
             {
-                var toast = Toast.Make("Hittar inte company.json filen i bobbo mappen!", CommunityToolkit.Maui.Core.ToastDuration.Short, 12);
-                await toast.Show();
-                Application.Current.Quit();
-            }
-            string? json = await File.ReadAllTextAsync(company);
-            if (string.IsNullOrEmpty(json))
-            {
-                var toast = Toast.Make("company.json filen är tom!", CommunityToolkit.Maui.Core.ToastDuration.Short, 12); // Fyll i company.json filen med rätt information!
+                var toast = Toast.Make("company.json filen är tom!", CommunityToolkit.Maui.Core.ToastDuration.Short, 18); // Fyll i company.json filen med rätt information!
                 await toast.Show();
                 Application.Current.Quit();
             }
         }
+
     }
-    
+
 }

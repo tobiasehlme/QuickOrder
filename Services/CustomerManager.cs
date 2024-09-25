@@ -11,6 +11,8 @@ public static class CustomerManager
         Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "bobbo");
 
     private static string _customerFile = Path.Combine(_appDir, "customers.json");
+    private static string _companyFile = Path.Combine(_appDir, "company.json");
+    public static Company Company { get; set; } = new();
 
     public static List<Customer> Customers { get; set; } = new();
 
@@ -75,8 +77,31 @@ public static class CustomerManager
         CustomersChanged?.Invoke();
 
     }
+    public static async Task<bool> LoadCompanyFromFile()
+    {
+        if (!Directory.Exists(_appDir))
+        {
+            Directory.CreateDirectory(_appDir);
+        }
+        if (!File.Exists(_companyFile))
+        {
+            Company c = new Company() { Address = "Company adress", City = "City", Name = "Company Name", PostalCode = "Postal code", SupportPhone = "Support phone #" };
+            var serialize = JsonSerializer.Serialize(c);
+            await using (StreamWriter sw = new StreamWriter(_companyFile))
+            {
+                await sw.WriteAsync(serialize);
+            }
+        }
+        string? json = await File.ReadAllTextAsync(_companyFile);
+        if (string.IsNullOrEmpty(json))
+        {
+            return false;
+        }
 
-    
+        Company = JsonSerializer.Deserialize<Company>(json);
+        return true;
+    }
+
 
     public static string GetUsername()
     {

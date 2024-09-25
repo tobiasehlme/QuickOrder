@@ -6,6 +6,7 @@ using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Canvas;
 using iText.Layout;
 using iText.Layout.Element;
+using OrderGenius;
 using QuickOrder.Common.Entities;
 
 
@@ -28,12 +29,6 @@ public class JobService
 
     public async Task Cradle(string cradleNumber, int qty, string ticket)
     {
-        // TODO: Behöver bestämma mig ifall jag ska checka butiksnamnet utanför klassen eller här inne
-        var coop = string.Empty;
-        if (!Store.Name.ToLower().Contains("coop"))
-        {
-            coop = "Coop";
-        }
 
         if (qty > 1)
         {
@@ -46,7 +41,7 @@ public class JobService
 
 
         var cradleMessage =
-            $"{coop} {Store.Name}, {Store.Id}, har {_quantityText} cradles som behöver felsökas och eventuellt bytas ut \r" +
+            $"{Store.Name}, {Store.Id}, har {_quantityText} cradles som behöver felsökas och eventuellt bytas ut \r" +
             $"Nummer: {cradleNumber} \r" +
             $"Totalt antal: {qty} \r" +
             $"Kontaktinfo till butik: {Store.Phone} \r" +
@@ -60,14 +55,7 @@ public class JobService
     }
     public async Task CheckIn(string ip, int qty, string ticket)
     {
-        // TODO: Behöver bestämma mig ifall jag ska checka butiksnamnet utanför klassen eller här inne
-        var coop = string.Empty;
         var inch = "incheckningsenhet";
-
-        if (!Store.Name.ToLower().Contains("coop"))
-        {
-            coop = "Coop";
-        }
 
         if (qty > 1)
         {
@@ -78,7 +66,7 @@ public class JobService
         {
             _quantityText = "en";
         }
-        var checkInDeviceMessage = $"{coop} {Store.Name}, har {_quantityText} {inch} som behöver felsökas och eventuellt bytas ut.\r" +
+        var checkInDeviceMessage = $"{Store.Name}, har {_quantityText} {inch} som behöver felsökas och eventuellt bytas ut.\r" +
                             $"IP Nummer: {ip} \r" +
                             $"Totalt antal: {qty} \r" +
                             $"Kontaktinfo till butik: {Store.Phone} \r" +
@@ -225,9 +213,8 @@ public class JobService
 
     public async Task GetCompany()
     {
-        string companyJson = await File.ReadAllTextAsync(System.IO.Path.Combine(_appDir, "company.json"));
-        var company = JsonSerializer.Deserialize<Company>(companyJson);
-        _company = company;
+        
+        _company = CustomerManager.Company;
     }
 
 
