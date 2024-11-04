@@ -4,7 +4,7 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:QuickOrder.MAUIApp"
-    Title="BeställaTekniker"
+    Title="QuickOrder"
     Shell.FlyoutBehavior="Disabled">
 
 
@@ -13,7 +13,12 @@
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage"
         Shell.BackgroundColor="#F28600"
-        Shell.TitleColor="White" />
+        Shell.TitleColor="White" >
+        
+    </ShellContent>
+    <Shell.ToolbarItems>
+        <ToolbarItem Text="📁" Clicked="MenuItem_OnClicked"></ToolbarItem>
+    </Shell.ToolbarItems>
 
 
 </Shell>

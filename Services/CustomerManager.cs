@@ -62,8 +62,13 @@ public static class CustomerManager
         }
         if (!File.Exists(_customerFile))
         {
-            File.Create(_customerFile);
-            return;
+            Customers.Add(new Customer(){Id = 1111, Name = "CustomerName", Stores = new ()});
+            var serialize = JsonSerializer.Serialize(Customers);
+            await using (StreamWriter sw = new StreamWriter(_customerFile))
+            {
+                await sw.WriteAsync(serialize);
+            }
+            
         }
         string? json = await File.ReadAllTextAsync(_customerFile);
 
@@ -73,8 +78,9 @@ public static class CustomerManager
         }
 
         Customers = JsonSerializer.Deserialize<List<Customer>>(json);
+        Customers = Customers.Where(x => x.Name != "CustomerName").ToList();
 
-        CustomersChanged?.Invoke();
+        //CustomersChanged?.Invoke();
 
     }
     public static async Task<bool> LoadCompanyFromFile()

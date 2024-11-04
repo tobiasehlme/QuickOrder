@@ -36,7 +36,7 @@ namespace QuickOrder.MAUIApp
             base.OnStart();
         }
 
-        private async Task CheckRequiredFiles()
+        public async Task CheckRequiredFiles()
         {
             string appDir = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "bobbo");
             string mainSrc = System.IO.Path.Combine(appDir, "templatePdf.pdf");
@@ -53,7 +53,6 @@ namespace QuickOrder.MAUIApp
                 await toast.Show();
                 await File.WriteAllTextAsync(mainSrc, "");
                 await File.WriteAllTextAsync(dest, "");
-                Application.Current.Quit();
             }
 
             if (!_isCompanyExist)
