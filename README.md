@@ -1,5 +1,5 @@
 # QuickOrder
-"Streamline your service requests with QuickOrder, the app that simplifies creating and sending orders to technicians."
+
 
 <picture><img src="project.png" width="500"></picture>
 
